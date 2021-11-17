@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "746b7d64-255b-45ad-aae7-f0c94e1ccd1c": {
+      "ProjectGuid": "746b7d64-255b-45ad-aae7-f0c94e1ccd1c",
+      "DisplayName": "NiuX.Extensions",
+      "ColorIndex": 0
+    },
+    "71c10b1a-258a-4e25-b741-0ae4838d6ea0": {
+      "ProjectGuid": "71c10b1a-258a-4e25-b741-0ae4838d6ea0",
+      "DisplayName": "NiuX.Tools",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

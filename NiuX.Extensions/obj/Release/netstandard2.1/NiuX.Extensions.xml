@@ -1,0 +1,1426 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NiuX.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:NiuX.Objects.DeepCloneExtensions">
+            <summary>
+            深拷贝
+            </summary>
+        </member>
+        <member name="M:NiuX.Objects.DeepCloneExtensions.DeepCloneUsingBinaryFormatter``1(``0)">
+            <summary>
+            使用二进制流进行深拷贝
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NiuX.Objects.DeepCloneExtensions.DeepCloneUsingJsonSerializer``1(``0)">
+            <summary>
+            使用 Json 序列化器进行深拷贝
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NiuX.Objects.DeepCloneExtensions.DeepCloneUsingReflection``1(``0)">
+            <summary>
+            使用反射进行深拷贝
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NiuX.SystemKeyExtensions">
+            <summary>
+            系统关键字扩展
+            </summary>
+        </member>
+        <member name="M:NiuX.SystemKeyExtensions.If``1(``0,System.Boolean,System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="condition"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NiuX.SystemKeyExtensions.If``1(``0,System.Predicate{``0},System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="predicate"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NiuX.SystemKeyExtensions.If``1(``0,System.Predicate{``0},System.Func{``0,``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="predicate"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Collections.Generic.FuncExtensions.GenerateSequence(System.Func{System.Int32,System.Int32},System.Int32)">
+            <summary>
+            生成前 count 项
+            </summary>
+            <param name="func">通项公式</param>
+            <param name="count">生成的数量</param>
+            <returns>队列前count项</returns>
+        </member>
+        <member name="T:System.Collections.Generic.NiuXCollectionExtensions">
+            <summary>
+            Extension methods for Collections.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXCollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Checks whatever given collection object is null or has no item.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXCollectionExtensions.AddIfNotContains``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary>
+            Adds an item to the collection if it's not already in the collection.
+            </summary>
+            <param name="source">The collection</param>
+            <param name="item">Item to check and add</param>
+            <typeparam name="T">Type of the items in the collection</typeparam>
+            <returns>Returns True if added, returns False if not.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXCollectionExtensions.AddIfNotContains``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Adds items to the collection which are not already in the collection.
+            </summary>
+            <param name="source">The collection</param>
+            <param name="items">Item to check and add</param>
+            <typeparam name="T">Type of the items in the collection</typeparam>
+            <returns>Returns the added items.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXCollectionExtensions.AddIfNotContains``1(System.Collections.Generic.ICollection{``0},System.Func{``0,System.Boolean},System.Func{``0})">
+            <summary>
+            Adds an item to the collection if it's not already in the collection based on the given <paramref name="predicate"/>.
+            </summary>
+            <param name="source">The collection</param>
+            <param name="predicate">The condition to decide if the item is already in the collection</param>
+            <param name="itemFactory">A factory that returns the item</param>
+            <typeparam name="T">Type of the items in the collection</typeparam>
+            <returns>Returns True if added, returns False if not.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXCollectionExtensions.RemoveAll``1(System.Collections.Generic.ICollection{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Removes all items from the collection those satisfy the given <paramref name="predicate"/>.
+            </summary>
+            <typeparam name="T">Type of the items in the collection</typeparam>
+            <param name="source">The collection</param>
+            <param name="predicate">The condition to remove the items</param>
+            <returns>List of removed items</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXCollectionExtensions.RemoveAll``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Removes all items from the collection those satisfy the given <paramref name="predicate"/>.
+            </summary>
+            <typeparam name="T">Type of the items in the collection</typeparam>
+            <param name="source">The collection</param>
+            <param name="items">Items to be removed from the list</param>
+        </member>
+        <member name="T:System.Collections.Generic.NiuXDictionaryExtensions">
+            <summary>
+            Extension methods for Dictionary.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.TryGetValue``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,``0@)">
+            <summary>
+            This method is used to try to get a value in a dictionary if it does exists.
+            </summary>
+            <typeparam name="T">Type of the value</typeparam>
+            <param name="dictionary">The collection object</param>
+            <param name="key">Key</param>
+            <param name="value">Value of the key (or default value if key not exists)</param>
+            <returns>True if key does exists in the dictionary</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.GetOrDefault``2(System.Collections.Generic.Dictionary{``0,``1},``0)">
+            <summary>
+            Gets a value from the dictionary with given key. Returns default value if can not find.
+            </summary>
+            <param name="dictionary">Dictionary to check and get</param>
+            <param name="key">Key to find the value</param>
+            <typeparam name="TKey">Type of the key</typeparam>
+            <typeparam name="TValue">Type of the value</typeparam>
+            <returns>Value if found, default if can not found.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.GetOrDefault``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+            Gets a value from the dictionary with given key. Returns default value if can not find.
+            </summary>
+            <param name="dictionary">Dictionary to check and get</param>
+            <param name="key">Key to find the value</param>
+            <typeparam name="TKey">Type of the key</typeparam>
+            <typeparam name="TValue">Type of the value</typeparam>
+            <returns>Value if found, default if can not found.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.GetOrDefault``2(System.Collections.Generic.IReadOnlyDictionary{``0,``1},``0)">
+            <summary>
+            Gets a value from the dictionary with given key. Returns default value if can not find.
+            </summary>
+            <param name="dictionary">Dictionary to check and get</param>
+            <param name="key">Key to find the value</param>
+            <typeparam name="TKey">Type of the key</typeparam>
+            <typeparam name="TValue">Type of the value</typeparam>
+            <returns>Value if found, default if can not found.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.GetOrDefault``2(System.Collections.Concurrent.ConcurrentDictionary{``0,``1},``0)">
+            <summary>
+            Gets a value from the dictionary with given key. Returns default value if can not find.
+            </summary>
+            <param name="dictionary">Dictionary to check and get</param>
+            <param name="key">Key to find the value</param>
+            <typeparam name="TKey">Type of the key</typeparam>
+            <typeparam name="TValue">Type of the value</typeparam>
+            <returns>Value if found, default if can not found.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``0,``1})">
+            <summary>
+            Gets a value from the dictionary with given key. Returns default value if can not find.
+            </summary>
+            <param name="dictionary">Dictionary to check and get</param>
+            <param name="key">Key to find the value</param>
+            <param name="factory">A factory method used to create the value if not found in the dictionary</param>
+            <typeparam name="TKey">Type of the key</typeparam>
+            <typeparam name="TValue">Type of the value</typeparam>
+            <returns>Value if found, default if can not found.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``1})">
+            <summary>
+            Gets a value from the dictionary with given key. Returns default value if can not find.
+            </summary>
+            <param name="dictionary">Dictionary to check and get</param>
+            <param name="key">Key to find the value</param>
+            <param name="factory">A factory method used to create the value if not found in the dictionary</param>
+            <typeparam name="TKey">Type of the key</typeparam>
+            <typeparam name="TValue">Type of the value</typeparam>
+            <returns>Value if found, default if can not found.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.TryAdd``2(System.Collections.Generic.Dictionary{``0,``1},``0,``1)">
+            <summary>
+            尝试将键和值添加到字典中：如果不存在，才添加；存在，不添加也不抛导常
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.AddOrReplace``2(System.Collections.Generic.Dictionary{``0,``1},``0,``1)">
+            <summary>
+            将键和值添加或替换到字典中：如果不存在，则添加；存在，则替换
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.GetValue``2(System.Collections.Generic.Dictionary{``0,``1},``0,``1)">
+            <summary>
+            获取与指定的键相关联的值，如果没有则返回输入的默认值
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXDictionaryExtensions.AddRange``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Boolean)">
+            <summary>
+            向字典中批量添加键值对
+            </summary>
+            <param name="replaceExisted">如果已存在，是否替换</param>
+        </member>
+        <member name="T:System.Collections.Generic.NiuXEnumerableExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXEnumerableExtensions.JoinAsString(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Concatenates the members of a constructed <see cref="T:System.Collections.Generic.IEnumerable`1"/> collection of type System.String, using the specified separator between each member.
+            This is a shortcut for string.Join(...)
+            </summary>
+            <param name="source">A collection that contains the strings to concatenate.</param>
+            <param name="separator">The string to use as a separator. separator is included in the returned string only if values has more than one element.</param>
+            <returns>A string that consists of the members of values delimited by the separator string. If values has no members, the method returns System.String.Empty.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXEnumerableExtensions.JoinAsString``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Concatenates the members of a collection, using the specified separator between each member.
+            This is a shortcut for string.Join(...)
+            </summary>
+            <param name="source">A collection that contains the objects to concatenate.</param>
+            <param name="separator">The string to use as a separator. separator is included in the returned string only if values has more than one element.</param>
+            <typeparam name="T">The type of the members of values.</typeparam>
+            <returns>A string that consists of the members of values delimited by the separator string. If values has no members, the method returns System.String.Empty.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXEnumerableExtensions.WhereIf``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{``0,System.Boolean})">
+            <summary>
+            Filters a <see cref="T:System.Collections.Generic.IEnumerable`1"/> by given predicate if given condition is true.
+            </summary>
+            <param name="source">Enumerable to apply filtering</param>
+            <param name="condition">A boolean value</param>
+            <param name="predicate">Predicate to filter the enumerable</param>
+            <returns>Filtered or not filtered enumerable based on <paramref name="condition"/></returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXEnumerableExtensions.WhereIf``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{``0,System.Int32,System.Boolean})">
+            <summary>
+            Filters a <see cref="T:System.Collections.Generic.IEnumerable`1"/> by given predicate if given condition is true.
+            </summary>
+            <param name="source">Enumerable to apply filtering</param>
+            <param name="condition">A boolean value</param>
+            <param name="predicate">Predicate to filter the enumerable</param>
+            <returns>Filtered or not filtered enumerable based on <paramref name="condition"/></returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXLinqExtensions.Distinct``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            https://www.cnblogs.com/CreateMyself/p/12863407.html
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXLinqExtensions.Aggregate``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Int32,``0})">
+            <summary>对一个序列应用累加器函数。</summary>
+            <param name="source">
+              <see cref="T:System.Collections.Generic.IEnumerable`1" /> 对其进行聚合。
+            </param>
+            <param name="func">要对每个元素调用的累加器函数。</param>
+            <typeparam name="TSource">
+              中的元素的类型 <paramref name="source" />。
+            </typeparam>
+            <returns>累加器的最终值。</returns>
+            <exception cref="T:System.ArgumentNullException">
+              <paramref name="source" /> 或 <paramref name="func" /> 为 <see langword="null" />。
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+              <paramref name="source" /> 不包含任何元素。
+            </exception>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXLinqExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            遍历每项
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="action"></param>
+        </member>
+        <member name="T:System.Collections.Generic.CommonEqualityComparer`2">
+            <summary>
+            通用相等比较器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TComparisonKey"></typeparam>
+        </member>
+        <member name="T:System.Collections.Generic.NiuXListExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXListExtensions.SortByDependencies``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``0}},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Sort a list by a topological sorting, which consider their dependencies.
+            </summary>
+            <typeparam name="T">The type of the members of values.</typeparam>
+            <param name="source">A list of objects to sort</param>
+            <param name="getDependencies">Function to resolve the dependencies</param>
+            <param name="comparer">Equality comparer for dependencies </param>
+            <returns>
+            Returns a new list ordered by dependencies.
+            If A depends on B, then B will come before than A in the resulting list.
+            </returns>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXListExtensions.SortByDependenciesVisit``1(``0,System.Func{``0,System.Collections.Generic.IEnumerable{``0}},System.Collections.Generic.List{``0},System.Collections.Generic.Dictionary{``0,System.Boolean})">
+             <summary>
+            
+             </summary>
+             <typeparam name="T">The type of the members of values.</typeparam>
+             <param name="item">Item to resolve</param>
+             <param name="getDependencies">Function to resolve the dependencies</param>
+             <param name="sorted">List with the sortet items</param>
+             <param name="visited">Dictionary with the visited items</param>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXListExtensions.AddFirstReturn``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            添加首个后返回
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:System.Collections.Generic.NiuXListExtensions.InsertReturn``1(System.Collections.Generic.List{``0},System.Int32,``0)">
+            <summary>
+            插入后返回
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="index"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Linq.Expressions.NiuXExpressionExtensions">
+            <summary>
+            表达式
+            </summary>
+            <remarks>常规的方式不能直接拼接表达式</remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:System.Linq.Expressions.NiuXExpressionExtensions.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})" -->
+        <member name="M:System.Linq.Expressions.NiuXExpressionExtensions.AndAlso``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            AndAlso
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="leftExpression"></param>
+            <param name="rightExpression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXExpressionExtensions.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Or
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXExpressionExtensions.OrElse``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Or
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXExpressionExtensions.Not``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Not，取反
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXExpressionExtensions.Merge``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
+            <summary>
+            合并
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="leftExpression"></param>
+            <param name="rightExpression"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Linq.Expressions.NiuXExpressionExtensions.ParameterReplaceExpressionVisitor">
+            <summary>
+            参数替换表达式访问器
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXExpressionExtensions.ParameterReplaceExpressionVisitor.ReplaceParameter(System.Linq.Expressions.Expression)">
+            <summary>
+            替换参数
+            </summary>
+            <param name="exp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Linq.Expressions.NiuXQueryableExtensions">
+            <summary>
+            Some useful extension methods for <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXQueryableExtensions.PageBy``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            Used for paging. Can be used as an alternative to Skip(...).Take(...) chaining.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXQueryableExtensions.PageBy``2(``1,System.Int32,System.Int32)">
+            <summary>
+            Used for paging. Can be used as an alternative to Skip(...).Take(...) chaining.
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXQueryableExtensions.WhereIf``1(System.Linq.IQueryable{``0},System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Filters a <see cref="T:System.Linq.IQueryable`1"/> by given predicate if given condition is true.
+            </summary>
+            <param name="query">Queryable to apply filtering</param>
+            <param name="condition">A boolean value</param>
+            <param name="predicate">Predicate to filter the query</param>
+            <returns>Filtered or not filtered query based on <paramref name="condition"/></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXQueryableExtensions.WhereIf``2(``1,System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Filters a <see cref="T:System.Linq.IQueryable`1"/> by given predicate if given condition is true.
+            </summary>
+            <param name="query">Queryable to apply filtering</param>
+            <param name="condition">A boolean value</param>
+            <param name="predicate">Predicate to filter the query</param>
+            <returns>Filtered or not filtered query based on <paramref name="condition"/></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXQueryableExtensions.WhereIf``1(System.Linq.IQueryable{``0},System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,System.Int32,System.Boolean}})">
+            <summary>
+            Filters a <see cref="T:System.Linq.IQueryable`1"/> by given predicate if given condition is true.
+            </summary>
+            <param name="query">Queryable to apply filtering</param>
+            <param name="condition">A boolean value</param>
+            <param name="predicate">Predicate to filter the query</param>
+            <returns>Filtered or not filtered query based on <paramref name="condition"/></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.NiuXQueryableExtensions.WhereIf``2(``1,System.Boolean,System.Linq.Expressions.Expression{System.Func{``0,System.Int32,System.Boolean}})">
+            <summary>
+            Filters a <see cref="T:System.Linq.IQueryable`1"/> by given predicate if given condition is true.
+            </summary>
+            <param name="query">Queryable to apply filtering</param>
+            <param name="condition">A boolean value</param>
+            <param name="predicate">Predicate to filter the query</param>
+            <returns>Filtered or not filtered query based on <paramref name="condition"/></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.ToHex(System.Byte)">
+            <summary>
+            转换为十六进制字符串
+            </summary>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.ToHex(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            转换为十六进制字符串
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.ToBase64String(System.Byte[])">
+            <summary>
+            转换为 Base64 字符串
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.ToInt(System.Byte[],System.Int32)">
+            <summary>
+            转换为基础数据类型 
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.ToInt64(System.Byte[],System.Int32)">
+            <summary>
+            转换为基础数据类型 
+            </summary>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.Decode(System.Byte[],System.Text.Encoding)">
+            <summary>
+            转换为指定编码的字符串 
+            </summary>
+            <param name="data"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.Hash(System.Byte[],System.String)">
+            <summary>
+            Hash
+            </summary>
+            <param name="data"></param>
+            <param name="hashName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.GetBit(System.Byte,System.Int32)">
+            <summary>
+            index从0开始，获取取第index是否为1
+            </summary>
+            <param name="b"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.SetBit(System.Byte,System.Int32)">
+            <summary>
+            将第index位设为1
+            </summary>
+            <param name="b"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.ClearBit(System.Byte,System.Int32)">
+            <summary>
+            将第index位设为0
+            </summary>
+            <param name="b"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXByteExtensions.ReverseBit(System.Byte,System.Int32)">
+            <summary>
+            将第index位取反
+            </summary>
+            <param name="b"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.NiuXComparableExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.IComparable`1"/>.
+            </summary>
+        </member>
+        <member name="M:System.NiuXComparableExtensions.IsBetween``1(``0,``0,``0)">
+            <summary>
+            Checks a value is between a minimum and maximum value.
+            </summary>
+            <param name="value">The value to be checked</param>
+            <param name="minInclusiveValue">Minimum (inclusive) value</param>
+            <param name="maxInclusiveValue">Maximum (inclusive) value</param>
+        </member>
+        <member name="M:System.NiuXComparableExtensions.IsBetween``1(``0,``0,``0,System.Boolean,System.Boolean)">
+            <summary>
+            Checks a value is between a minimum and maximum value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.NiuXDateTimeExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.DateTime"/>.
+            </summary>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.ToUnixTimestamp(System.DateTime)">
+            <summary>
+            Converts a DateTime to a Unix Timestamp
+            </summary>
+            <param name="target">This DateTime</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.FromUnixTimestamp(System.Double)">
+            <summary>
+            Converts a Unix Timestamp in to a DateTime
+            </summary>
+            <param name="unixTime">This Unix Timestamp</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.ToDayEnd(System.DateTime)">
+            <summary>
+            Gets the value of the End of the day (23:59)
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.StartOfWeek(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Gets the First Date of the week for the specified date
+            </summary>
+            <param name="dt">this DateTime</param>
+            <param name="startOfWeek">The Start Day of the Week (ie, Sunday/Monday)</param>
+            <returns>The First Date of the week</returns>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.DaysOfMonth(System.Int32,System.Int32)">
+            <summary>
+            Returns all the days of a month.
+            </summary>
+            <param name="year">The year.</param>
+            <param name="month">The month.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.WeekDayInstanceOfMonth(System.DateTime)">
+            <summary>
+            Determines the Nth instance of a Date's DayOfWeek in a month
+            </summary>
+            <returns></returns>
+            <example>11/29/2011 would return 5, because it is the 5th Tuesday of each month</example>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.TotalDaysInMonth(System.DateTime)">
+            <summary>
+            Gets the total days in a month
+            </summary>
+            <param name="dateTime">The date time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.ToDateTimeUnspecified(System.DateTime)">
+            <summary>
+            Takes any date and returns it's value as an Unspecified DateTime
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXDateTimeExtensions.TrimMilliseconds(System.DateTime)">
+            <summary>
+            Trims the milliseconds off of a datetime
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.NiuXDayOfWeekExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.DayOfWeek"/>.
+            </summary>
+        </member>
+        <member name="M:System.NiuXDayOfWeekExtensions.IsWeekend(System.DayOfWeek)">
+            <summary>
+            Check if given <see cref="T:System.DayOfWeek"/> value is weekend.
+            </summary>
+        </member>
+        <member name="M:System.NiuXDayOfWeekExtensions.IsWeekday(System.DayOfWeek)">
+            <summary>
+            Check if given <see cref="T:System.DayOfWeek"/> value is weekday.
+            </summary>
+        </member>
+        <member name="M:System.NiuXDayOfWeekExtensions.FindNthWeekDayOfMonth(System.DayOfWeek,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Finds the NTH week day of a month.
+            </summary>
+            <param name="dayOfWeek">The day of week.</param>
+            <param name="year">The year.</param>
+            <param name="month">The month.</param>
+            <param name="n">The nth instance.</param>
+            <remarks>Compensates for 4th and 5th DayOfWeek of Month</remarks>
+        </member>
+        <member name="M:System.NiuXDayOfWeekExtensions.TotalInstancesInMonth(System.DayOfWeek,System.Int32,System.Int32)">
+            <summary>
+            Finds the total number of instances of a specific DayOfWeek in a month.
+            </summary>
+            <param name="dayOfWeek">The day of week.</param>
+            <param name="year">The year.</param>
+            <param name="month">The month.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXDayOfWeekExtensions.TotalInstancesInMonth(System.DayOfWeek,System.DateTime)">
+            <summary>
+            Gets the total number of instances of a specific DayOfWeek in a month.
+            </summary>
+            <param name="dayOfWeek">The day of week.</param>
+            <param name="dateTime">The date in a month.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.NiuXEnumExtensions">
+            <summary>
+            枚举扩展
+            </summary>
+        </member>
+        <member name="M:System.NiuXEnumExtensions.GetDescription(System.Enum)">
+            <summary>
+            获取描述
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.NiuXEventHandlerExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.EventHandler"/>.
+            </summary>
+        </member>
+        <member name="M:System.NiuXEventHandlerExtensions.InvokeSafely(System.EventHandler,System.Object)">
+            <summary>
+            Raises given event safely with given arguments.
+            </summary>
+            <param name="eventHandler">The event handler</param>
+            <param name="sender">Source of the event</param>
+        </member>
+        <member name="M:System.NiuXEventHandlerExtensions.InvokeSafely(System.EventHandler,System.Object,System.EventArgs)">
+            <summary>
+            Raises given event safely with given arguments.
+            </summary>
+            <param name="eventHandler">The event handler</param>
+            <param name="sender">Source of the event</param>
+            <param name="e">Event argument</param>
+        </member>
+        <member name="M:System.NiuXEventHandlerExtensions.InvokeSafely``1(System.EventHandler{``0},System.Object,``0)">
+            <summary>
+            Raises given event safely with given arguments.
+            </summary>
+            <typeparam name="TEventArgs">Type of the <see cref="T:System.EventArgs"/></typeparam>
+            <param name="eventHandler">The event handler</param>
+            <param name="sender">Source of the event</param>
+            <param name="e">Event argument</param>
+        </member>
+        <member name="T:System.NiuXExceptionExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Exception"/> class.
+            </summary>
+        </member>
+        <member name="M:System.NiuXExceptionExtensions.ReThrow(System.Exception)">
+            <summary>
+            Uses <see cref="M:System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(System.Exception)"/> method to re-throws exception
+            while preserving stack trace.
+            </summary>
+            <param name="exception">Exception to be re-thrown</param>
+        </member>
+        <member name="T:System.NiuXObjectExtensions">
+            <summary>
+            Extension methods for all objects.
+            </summary>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.As``1(System.Object)">
+            <summary>
+            Used to simplify and beautify casting an object to a type.
+            </summary>
+            <typeparam name="T">Type to be casted</typeparam>
+            <param name="obj">Object to cast</param>
+            <returns>Casted object</returns>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.To``1(System.Object)">
+            <summary>
+            Converts given object to a value type using <see cref="M:System.Convert.ChangeType(System.Object,System.Type)"/> method.
+            </summary>
+            <param name="obj">Object to be converted</param>
+            <typeparam name="T">Type of the target object</typeparam>
+            <returns>Converted object</returns>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.IsIn``1(``0,``0[])">
+            <summary>
+            Check if an item is in a list.
+            </summary>
+            <param name="item">Item to check</param>
+            <param name="list">List of items</param>
+            <typeparam name="T">Type of the items</typeparam>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.IsIn``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Check if an item is in the given enumerable.
+            </summary>
+            <param name="item">Item to check</param>
+            <param name="items">Items</param>
+            <typeparam name="T">Type of the items</typeparam>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.If``1(``0,System.Boolean,System.Func{``0,``0})">
+            <summary>
+            Can be used to conditionally perform a function
+            on an object and return the modified or the original object.
+            It is useful for chained calls.
+            </summary>
+            <param name="obj">An object</param>
+            <param name="condition">A condition</param>
+            <param name="func">A function that is executed only if the condition is <code>true</code></param>
+            <typeparam name="T">Type of the object</typeparam>
+            <returns>
+            Returns the modified object (by the <paramref name="func"/> if the <paramref name="condition"/> is <code>true</code>)
+            or the original object if the <paramref name="condition"/> is <code>false</code>
+            </returns>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.If``1(``0,System.Boolean,System.Action{``0})">
+            <summary>
+            Can be used to conditionally perform an action
+            on an object and return the original object.
+            It is useful for chained calls on the object.
+            </summary>
+            <param name="obj">An object</param>
+            <param name="condition">A condition</param>
+            <param name="action">An action that is executed only if the condition is <code>true</code></param>
+            <typeparam name="T">Type of the object</typeparam>
+            <returns>
+            Returns the original object.
+            </returns>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.IsFunc(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXObjectExtensions.IsFunc``1(System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.IsAssignableTo``1(System.Type)">
+             <summary>
+             Determines whether an instance of this type can be assigned to
+             an instance of the <typeparamref name="TTarget"></typeparamref>.
+            
+             Internally uses <see cref="M:System.Type.IsAssignableFrom(System.Type)"/>.
+             </summary>
+             <typeparam name="TTarget">Target type</typeparam> (as reverse).
+        </member>
+        <member name="M:System.NiuXTypeExtensions.IsAssignableTo(System.Type,System.Type)">
+             <summary>
+             Determines whether an instance of this type can be assigned to
+             an instance of the <paramref name="targetType"></paramref>.
+            
+             Internally uses <see cref="M:System.Type.IsAssignableFrom(System.Type)"/> (as reverse).
+             </summary>
+             <param name="type">this type</param>
+             <param name="targetType">Target type</param>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.GetBaseClasses(System.Type,System.Boolean)">
+            <summary>
+            Gets all base classes of this type.
+            </summary>
+            <param name="type">The type to get its base classes.</param>
+            <param name="includeObject">True, to include the standard <see cref="T:System.Object"/> type in the returned array.</param>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.GetBaseClasses(System.Type,System.Type,System.Boolean)">
+            <summary>
+            Gets all base classes of this type.
+            </summary>
+            <param name="type">The type to get its base classes.</param>
+            <param name="stoppingType">A type to stop going to the deeper base classes. This type will be be included in the returned array</param>
+            <param name="includeObject">True, to include the standard <see cref="T:System.Object"/> type in the returned array.</param>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.IsNullableType(System.Type)">
+            <summary>
+            是否可空类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.GetNonNullableType(System.Type)">
+            <summary>
+            获取不可空类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.IsGenericEnumerableType(System.Type)">
+            <summary>
+            是否泛型可枚举类型
+            </summary>
+            <param name="enumerableType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.GetGenericElementType(System.Type,System.Int32)">
+            <summary>
+            获取泛型元素类型
+            </summary>
+            <param name="enumerableType"></param>
+            <param name="argumentIndex">参数下标</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.IsKindOfGeneric(System.Type,System.Type)">
+            <summary>
+            是否实现了某泛型类型
+            </summary>
+            <param name="type"></param>
+            <param name="definition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.FindGenericType(System.Type,System.Type)">
+            <summary>
+            查找泛型类型
+            </summary>
+            <param name="definition"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="F:System.NiuXTypeExtensions.NumericTypes">
+            <summary>
+            Collection of numeric types.
+            </summary>
+        </member>
+        <member name="M:System.NiuXTypeExtensions.IsNumeric(System.Type)">
+            <summary>
+            Check if the given type is a numeric type.
+            </summary>
+            <param name="type">The type to be checked.</param>
+            <returns><c>true</c> if it's numeric; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="T:System.Reflection.NiuXMemberInfoExtensions">
+            <summary>
+            Extensions to <see cref="T:System.Reflection.MemberInfo"/>.
+            </summary>
+        </member>
+        <member name="M:System.Reflection.NiuXMemberInfoExtensions.GetSingleAttributeOrNull``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            Gets a single attribute for a member.
+            </summary>
+            <typeparam name="TAttribute">Type of the attribute</typeparam>
+            <param name="memberInfo">The member that will be checked for the attribute</param>
+            <param name="inherit">Include inherited attributes</param>
+            <returns>Returns the attribute object if found. Returns null if not found.</returns>
+        </member>
+        <member name="M:System.Security.Cryptography.NiuXCryptographyExtensions.Encrypt(System.String)">
+            <summary>
+            DES 加密
+            </summary>
+            <param name="text">需要加密的值</param>
+            <returns>加密后的结果</returns>
+        </member>
+        <member name="M:System.Security.Cryptography.NiuXCryptographyExtensions.Decrypt(System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="encryptText"></param>
+            <returns>解密后的结果</returns>
+        </member>
+        <member name="M:System.Security.Cryptography.NiuXCryptographyExtensions.Encrypt(System.String,System.Int32)">
+            <summary>
+            MD5加密,和动网上的16/32位MD5加密结果相同,
+            使用的UTF8编码
+            </summary>
+            <param name="source">待加密字串</param>
+            <param name="length">16或32值之一,其它则采用.net默认MD5加密算法</param>
+            <returns>加密后的字串</returns>
+        </member>
+        <member name="M:System.Security.Cryptography.NiuXCryptographyExtensions.AbstractFile(System.String)">
+            <summary>
+            获取文件的MD5摘要
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Security.Cryptography.NiuXCryptographyExtensions.AbstractFile(System.IO.Stream)">
+            <summary>
+            根据stream获取文件摘要
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToInt16(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToShort(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToInt32(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToInt(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToInt64(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToLong(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToDateTime(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToBoolean(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToBool(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.EnsureEndsWith(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Adds a char to end of given string if it does not ends with the char.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.EnsureStartsWith(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Adds a char to beginning of given string if it does not starts with the char.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            Indicates whether this string is null or an System.String.Empty string.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            indicates whether this string is null, empty, or consists only of white-space characters.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.Left(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        </member>
+        <member name="M:System.NiuXStringExtensions.NormalizeLineEndings(System.String)">
+            <summary>
+            Converts line endings in the string to <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.NthIndexOf(System.String,System.Char,System.Int32)">
+            <summary>
+            Gets index of nth occurrence of a char in a string.
+            </summary>
+            <param name="str">source string to be searched</param>
+            <param name="c">Char to search in <see cref="!:str"/></param>
+            <param name="n">Count of the occurrence</param>
+        </member>
+        <member name="M:System.NiuXStringExtensions.RemovePostFix(System.String,System.String[])">
+            <summary>
+            Removes first occurrence of the given postfixes from end of the given string.
+            </summary>
+            <param name="str">The string.</param>
+            <param name="postFixes">one or more postfix.</param>
+            <returns>Modified string or the same string if it has not any of given postfixes</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.RemovePostFix(System.String,System.StringComparison,System.String[])">
+            <summary>
+            Removes first occurrence of the given postfixes from end of the given string.
+            </summary>
+            <param name="str">The string.</param>
+            <param name="comparisonType">String comparison type</param>
+            <param name="postFixes">one or more postfix.</param>
+            <returns>Modified string or the same string if it has not any of given postfixes</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.RemovePreFix(System.String,System.String[])">
+            <summary>
+            Removes first occurrence of the given prefixes from beginning of the given string.
+            </summary>
+            <param name="str">The string.</param>
+            <param name="preFixes">one or more prefix.</param>
+            <returns>Modified string or the same string if it has not any of given prefixes</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.RemovePreFix(System.String,System.StringComparison,System.String[])">
+            <summary>
+            Removes first occurrence of the given prefixes from beginning of the given string.
+            </summary>
+            <param name="str">The string.</param>
+            <param name="comparisonType">String comparison type</param>
+            <param name="preFixes">one or more prefix.</param>
+            <returns>Modified string or the same string if it has not any of given prefixes</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.Right(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from end of the string.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        </member>
+        <member name="M:System.NiuXStringExtensions.Split(System.String,System.String)">
+            <summary>
+            Uses string.Split method to split given string by given separator.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.Split(System.String,System.String,System.StringSplitOptions)">
+            <summary>
+            Uses string.Split method to split given string by given separator.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.SplitToLines(System.String)">
+            <summary>
+            Uses string.Split method to split given string by <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.SplitToLines(System.String,System.StringSplitOptions)">
+            <summary>
+            Uses string.Split method to split given string by <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToCamelCase(System.String,System.Boolean)">
+            <summary>
+            Converts PascalCase string to camelCase string.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="useCurrentCulture">set true to use current culture. Otherwise, invariant culture will be used.</param>
+            <returns>camelCase of the string</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToSentenceCase(System.String,System.Boolean)">
+            <summary>
+            Converts given PascalCase/camelCase string to sentence (by splitting words by space).
+            Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+            </summary>
+            <param name="str">String to convert.</param>
+            <param name="useCurrentCulture">set true to use current culture. Otherwise, invariant culture will be used.</param>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToKebabCase(System.String,System.Boolean)">
+            <summary>
+            Converts given PascalCase/camelCase string to kebab-case.
+            </summary>
+            <param name="str">String to convert.</param>
+            <param name="useCurrentCulture">set true to use current culture. Otherwise, invariant culture will be used.</param>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToSnakeCase(System.String)">
+            <summary>
+            Converts given PascalCase/camelCase string to snake case.
+            Example: "ThisIsSampleSentence" is converted to "this_is_a_sample_sentence".
+            https://github.com/npgsql/npgsql/blob/dev/src/Npgsql/NameTranslation/NpgsqlSnakeCaseNameTranslator.cs#L51
+            </summary>
+            <param name="str">String to convert.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToEnum``1(System.String)">
+            <summary>
+            Converts string to enum value.
+            </summary>
+            <typeparam name="T">Type of enum</typeparam>
+            <param name="value">String value to convert</param>
+            <returns>Returns enum object</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToEnum``1(System.String,System.Boolean)">
+            <summary>
+            Converts string to enum value.
+            </summary>
+            <typeparam name="T">Type of enum</typeparam>
+            <param name="value">String value to convert</param>
+            <param name="ignoreCase">Ignore case</param>
+            <returns>Returns enum object</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToPascalCase(System.String,System.Boolean)">
+            <summary>
+            Converts camelCase string to PascalCase string.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="useCurrentCulture">set true to use current culture. Otherwise, invariant culture will be used.</param>
+            <returns>PascalCase of the string</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.Truncate(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TruncateFromBeginning(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from Ending of the string if it exceeds maximum length.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TruncateWithPostfix(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            It adds a "..." postfix to end of the string if it's truncated.
+            Returning string can not be longer than maxLength.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TruncateWithPostfix(System.String,System.Int32,System.String)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            It adds given <paramref name="postfix"/> to end of the string if it's truncated.
+            Returning string can not be longer than maxLength.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:System.NiuXStringExtensions.GetBytes(System.String)">
+            <summary>
+            Converts given string to a byte array using <see cref="P:System.Text.Encoding.UTF8"/> encoding.
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.GetBytes(System.String,System.Text.Encoding)">
+            <summary>
+            Converts given string to a byte array using the given <paramref name="encoding"/>
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.IsNotNullAndNotWhiteSpace(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.IsEqual(System.String,System.String,System.StringComparison)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="str"></param>
+            <param name="value"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.IsNotEqual(System.String,System.String,System.StringComparison)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="str"></param>
+            <param name="value"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToSbc(System.String)">
+            <summary>
+            转全角(SBC case)
+            </summary>
+            <param name="str">任意字符串</param>
+            <returns>全角字符串</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ToDbc(System.String)">
+            <summary>
+            转半角(DBC case)
+            </summary>
+            <returns>半角字符串</returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.IsMatch(System.String,System.String)">
+            <summary>
+            是否匹配
+            </summary>
+            <param name="str"></param>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.Match(System.String,System.String)">
+            <summary>
+            匹配的字符
+            </summary>
+            <param name="str"></param>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="F:System.NiuXStringExtensions.ToParseMethods">
+            <summary>
+            待转换方法
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseByte(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseInt(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseLong(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseShort(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseDateTime(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseDecimal(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseFloat(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseDouble(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseNullableInt(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.ParseNullableDecimal(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="F:System.NiuXStringExtensions.ToTryParseMethods">
+            <summary>
+            待转换方法
+            </summary>
+        </member>
+        <member name="F:System.NiuXStringExtensions.ToTryParseMethodsOfContainDefaultValue">
+            <summary>
+            待转换含默认值的方法
+            </summary>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseByte(System.String,System.Byte)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseInt(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseLong(System.String,System.Int64)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseShort(System.String,System.Int16)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseDateTime(System.String,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseDecimal(System.String,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseFloat(System.String,System.Single)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseDouble(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseNullableInt(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.NiuXStringExtensions.TryParseNullableDecimal(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Threading.Tasks.NiuXTaskExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.NiuXTaskExtensions.ToTaskResult``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

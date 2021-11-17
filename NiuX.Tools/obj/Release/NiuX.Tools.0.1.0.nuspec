@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NiuX.Tools</id>
+    <version>0.1.0</version>
+    <authors>NiuX.Tools</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="NiuX.Extensions" version="0.0.9" exclude="Build,Analyzers" />
+        <dependency id="CsvHelper" version="27.1.1" exclude="Build,Analyzers" />
+        <dependency id="EPPlus" version="5.7.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Projects\MyGitee\niux\framework\src\NiuX.Tools\bin\Release\net5.0\NiuX.Tools.dll" target="lib\net5.0\NiuX.Tools.dll" />
+  </files>
+</package>

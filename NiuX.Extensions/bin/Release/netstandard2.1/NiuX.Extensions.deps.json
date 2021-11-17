@@ -1,0 +1,116 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "NiuX.Extensions/0.0.9": {
+        "dependencies": {
+          "ConfigureAwait.Fody": "3.3.1",
+          "Fody": "6.5.1",
+          "JetBrains.Annotations": "2021.1.0",
+          "Microsoft.SourceLink.GitHub": "1.1.0-beta-20204-02",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "NiuX.Extensions.dll": {}
+        }
+      },
+      "ConfigureAwait.Fody/3.3.1": {
+        "dependencies": {
+          "Fody": "6.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ConfigureAwait.dll": {
+            "assemblyVersion": "3.3.1.0",
+            "fileVersion": "3.3.1.0"
+          }
+        }
+      },
+      "Fody/6.5.1": {},
+      "JetBrains.Annotations/2021.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "2021.1.0.0",
+            "fileVersion": "2021.1.0.0"
+          }
+        }
+      },
+      "Microsoft.Build.Tasks.Git/1.1.0-beta-20204-02": {},
+      "Microsoft.SourceLink.Common/1.1.0-beta-20204-02": {},
+      "Microsoft.SourceLink.GitHub/1.1.0-beta-20204-02": {
+        "dependencies": {
+          "Microsoft.Build.Tasks.Git": "1.1.0-beta-20204-02",
+          "Microsoft.SourceLink.Common": "1.1.0-beta-20204-02"
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NiuX.Extensions/0.0.9": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConfigureAwait.Fody/3.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R9PQYf0AT4RBZcUXm22xWkCpSmNHdTzQ0dOyLIsxIK6dwXH4S9pY/rZdXU/63i8vZvSzZ99sB1kP7xer8MCe6w==",
+      "path": "configureawait.fody/3.3.1",
+      "hashPath": "configureawait.fody.3.3.1.nupkg.sha512"
+    },
+    "Fody/6.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DEw9rPG5vrpaK4vPPze0f4q6Zd0mfzjGNKy49nrmINkftIHpkyf8KH+uC/qF8y6v1askPWu9NbJS9bkmN5wXaA==",
+      "path": "fody/6.5.1",
+      "hashPath": "fody.6.5.1.nupkg.sha512"
+    },
+    "JetBrains.Annotations/2021.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n9JSw5Z+F+6gp9vSv4aLH6p/bx3GAYA6FZVq1wJq/TJySv/kPgFKLGFeS7A8Xa5X4/GWorh5gd43yjamUgnBNA==",
+      "path": "jetbrains.annotations/2021.1.0",
+      "hashPath": "jetbrains.annotations.2021.1.0.nupkg.sha512"
+    },
+    "Microsoft.Build.Tasks.Git/1.1.0-beta-20204-02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T7mMbmgoT3XXKrXbLeEj6D9fQLZDmF/T8W5NQsrlcfQ24nOLrkr1Cst9cmI44zIH16rIo+4ws0tEqUN+Jw5Iag==",
+      "path": "microsoft.build.tasks.git/1.1.0-beta-20204-02",
+      "hashPath": "microsoft.build.tasks.git.1.1.0-beta-20204-02.nupkg.sha512"
+    },
+    "Microsoft.SourceLink.Common/1.1.0-beta-20204-02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3tLuYVu7iPSUGVgSygxZnN4q6ZdXFbKd2A/1Zgva5i6VMoVXoTJwggKVZTGyemlWriziOwY76I5MZI+vnJ8ztA==",
+      "path": "microsoft.sourcelink.common/1.1.0-beta-20204-02",
+      "hashPath": "microsoft.sourcelink.common.1.1.0-beta-20204-02.nupkg.sha512"
+    },
+    "Microsoft.SourceLink.GitHub/1.1.0-beta-20204-02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nVB0LiCn+q0eprqpQ9BeZ6xMdIobiRTwZlrvyAYDv4Zprek5BUHJ8usXUEtJlCTqQYF5HvLgvwf361jCkhmXCg==",
+      "path": "microsoft.sourcelink.github/1.1.0-beta-20204-02",
+      "hashPath": "microsoft.sourcelink.github.1.1.0-beta-20204-02.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    }
+  }
+}

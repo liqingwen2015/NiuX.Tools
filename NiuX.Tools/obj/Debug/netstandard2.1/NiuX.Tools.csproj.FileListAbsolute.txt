@@ -1,0 +1,14 @@
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\bin\Debug\netstandard2.1\NiuX.Tools.deps.json
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\bin\Debug\netstandard2.1\NiuX.Tools.dll
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\bin\Debug\netstandard2.1\NiuX.Tools.pdb
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\bin\Debug\netstandard2.1\NiuX.Extensions.dll
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\bin\Debug\netstandard2.1\NiuX.Extensions.pdb
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\bin\Debug\netstandard2.1\NiuX.Extensions.xml
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.csproj.AssemblyReference.cache
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.AssemblyInfoInputs.cache
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.AssemblyInfo.cs
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.csproj.CoreCompileInputs.cache
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.csproj.CopyComplete
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.dll
+C:\Projects\MyGithub\NiuX.Tools\NiuX.Tools\obj\Debug\netstandard2.1\NiuX.Tools.pdb

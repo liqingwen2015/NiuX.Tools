@@ -18,9 +18,15 @@ namespace NiuX.Data
 
         private static class Inner
         {
-            private static readonly ParameterExpression ParameterExpression = Expression.Parameter(DbDataReaderType);
+            private static readonly ParameterExpression ParameterExpression;
 
-            private static readonly Type DbDataReaderType = typeof(IDataRecord);
+            private static readonly Type DbDataReaderType;
+
+            static Inner()
+            {
+                DbDataReaderType = typeof(IDataRecord);
+                ParameterExpression = Expression.Parameter(DbDataReaderType);
+            }
 
             internal static List<T> ReadAsList<T>(IDataRecord reader) where T : new() => InnerCore<T>.Main.ReadAsList(reader);
 
@@ -30,13 +36,21 @@ namespace NiuX.Data
             {
                 private static readonly ConcurrentDictionary<string, Func<IDataRecord, List<T>>> Readers = new();
 
-                private static readonly ParameterExpression ListVariable = Expression.Variable(ListType);
+                private static readonly ParameterExpression _listVariable;
 
-                private static readonly LabelTarget ListLabelTarget = Expression.Label(ListType);
+                private static readonly LabelTarget _listLabelTarget;
 
-                private static readonly Type ListType = typeof(List<T>);
+                private static readonly Type _listType;
 
-                private static readonly Type ModelType = typeof(T);
+                private static readonly Type _modelType;
+
+                static InnerCore()
+                {
+                    _listType = typeof(List<T>);
+                    _modelType = typeof(T);
+                    _listLabelTarget = Expression.Label(_listType);
+                    _listVariable = Expression.Variable(_listType);
+                }
 
                 /// <summary>
                 /// 主
@@ -62,17 +76,17 @@ namespace NiuX.Data
                 private static List<T> ReadAsList(IDataRecord reader, Func<KeyValuePair<int, PropertyInfo>, Expression> func) =>
                     Readers.GetOrAdd(string.Concat(Enumerable.Range(0, reader.FieldCount).Select(reader.GetName)),
                         _ => Expression.Lambda<Func<IDataRecord, List<T>>>(
-                         Expression.Block(new List<ParameterExpression>() { ListVariable },
-                             Expression.Assign(ListVariable, Expression.New(ListType)),
+                         Expression.Block(new List<ParameterExpression>() { _listVariable },
+                             Expression.Assign(_listVariable, Expression.New(_listType)),
                              Expression.Loop(Expression.IfThenElse(Expression.Equal(
                                  Expression.Call(ParameterExpression, DbDataReaderType.GetMethod("Read")!), Expression.Constant(true)),
-                                 Expression.Call(ListVariable, ListType.GetMethod("Add", new[] { ModelType })!, CreateExpressionOfMemberInit(reader, func)),
-                                 Expression.Break(ListLabelTarget, ListVariable))),
-                             Expression.Label(ListLabelTarget, ListVariable)), ParameterExpression).Compile())(reader);
+                                 Expression.Call(_listVariable, _listType.GetMethod("Add", new[] { _modelType })!, CreateExpressionOfMemberInit(reader, func)),
+                                 Expression.Break(_listLabelTarget, _listVariable))),
+                             Expression.Label(_listLabelTarget, _listVariable)), ParameterExpression).Compile())(reader);
 
 
                 private static Expression CreateExpressionOfMemberInit(IDataRecord reader, Func<KeyValuePair<int, PropertyInfo>, Expression> func) =>
-                    Expression.MemberInit(Expression.New(ModelType), GetMapping(reader).Select(p =>
+                    Expression.MemberInit(Expression.New(_modelType), GetMapping(reader).Select(p =>
                         Expression.Bind(p.Value, Expression.Condition(
                             Expression.Call(Expression.Constant(reader, DbDataReaderType), DbDataReaderType.GetMethod("IsDBNull", new[] { typeof(int) })!,
                                 Expression.Constant(p.Key, typeof(int))), CreateConstExpression(p.Value), Expression.Convert(func(p), p.Value.PropertyType)))));
@@ -88,7 +102,7 @@ namespace NiuX.Data
 
                 private static Dictionary<int, PropertyInfo> GetMapping(IDataRecord reader) =>
                     Enumerable.Range(0, reader.FieldCount).ToDictionary(x => x, reader.GetName)
-                        .ToDictionary(x => x.Key, p => Array.Find(ModelType.GetProperties(), x => p.Value == x.GetCustomAttribute<ColumnAttribute>()?.Name || p.Value == x.Name || p.Value == x.Name.ToSnakeCase()))
+                        .ToDictionary(x => x.Key, p => Array.Find(_modelType.GetProperties(), x => p.Value == x.GetCustomAttribute<ColumnAttribute>()?.Name || p.Value == x.Name || p.Value == x.Name.ToSnakeCase()))
                         .Where(x => x.Value != null).ToDictionary(x => x.Key, x => x.Value);
             }
         }
